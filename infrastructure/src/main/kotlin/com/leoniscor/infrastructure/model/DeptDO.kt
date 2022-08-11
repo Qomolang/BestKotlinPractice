@@ -3,7 +3,6 @@ package com.leoniscor.model
 class DeptDO(deptId: Long, deptName: String) {
 
     var staffNumber: Int = 0
-        get() = 2 * 8
 
     var deptId: Long = 0
 
