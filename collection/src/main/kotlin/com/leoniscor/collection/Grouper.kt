@@ -1,6 +1,7 @@
 package com.leoniscor.collection
 
 import com.leoniscor.model.DeptDO
+import java.util.stream.Stream
 
 
 class Grouper {
@@ -13,4 +14,9 @@ class Grouper {
     fun groupingByWith1param(input: List<DeptDO>): Map<Int, List<DeptDO>> {
         return input.groupBy(DeptDO::staffNumber)
     }
+
+}
+
+fun main() {
+   var stringList = useNonNullSafeCollection(null)
 }
