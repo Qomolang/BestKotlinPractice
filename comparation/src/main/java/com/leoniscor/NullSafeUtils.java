@@ -1,6 +1,6 @@
 package com.leoniscor;
 
-public class Main {
+public class NullSafeUtils {
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }

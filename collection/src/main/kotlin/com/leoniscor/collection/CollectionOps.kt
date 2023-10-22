@@ -5,9 +5,3 @@ package com.leoniscor.collection
  */
 class CollectionOps {
 }
-
-fun useNonNullSafeCollection(stringList: List<String>?) {
-
-    stringList?.stream()?.toList()
-
-}

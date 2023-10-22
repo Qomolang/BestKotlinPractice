@@ -16,7 +16,3 @@ class Grouper {
     }
 
 }
-
-fun main() {
-   var stringList = useNonNullSafeCollection(null)
-}
