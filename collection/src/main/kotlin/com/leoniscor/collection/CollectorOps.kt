@@ -18,18 +18,20 @@ class CollectorOps {
         return byDept
     }
 
-    fun filterOrMap(input: List<DeptDO>) {
-        val output1 = input
-            .map { it.deptName }
-
-        val output2 = input
-            .filter { it.deptId == 1L }
-
-        val output = input
-            .filter { it.deptId == 1L }
-            .map { it.deptName }
+    /**
+     * 性能更好 associateBy 函数，该函数接受两个lambdas来生成键和值，并内联 Map 的创建：
+     */
+    fun map2listV1(input: List<DeptDO>){
+        val map = input.associateBy({it.deptId}, {it.deptName})
     }
 
+    /**
+     * 1. 使用标准的 map 函数来创建 Pair 的列表
+     * 2. 使用toMap 可以生成最终的映射
+     */
+    fun map2listV2(input: List<DeptDO>){
+        val map = input.map { it.deptId to it.deptName }
+            .toMap()
 
-
+    }
 }
