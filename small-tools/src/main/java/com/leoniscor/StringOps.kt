@@ -22,10 +22,10 @@ fun splitByLine(oralText: String): List<String> {
 /**
  * 按照空格分割
  */
-fun splitByBlank(oralTextLines: List<String>): List<String> {
+fun splitByBlank(oralTextLines: List<String>): List<List<String>> {
     var output = oralTextLines
-        .map { it.split("""\s+""") }.flatMap { it }
-        .map { it.trim() }
+        .filter { it.isNotEmpty() }
+        .map { it.split("""\s+""".toRegex()) }
 
     return output
 }

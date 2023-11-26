@@ -6,6 +6,25 @@ import java.io.File
  * @author gaosong
  */
 class FileOps {
+    fun basic(){
+        var fileAbsoluteNames: MutableList<String> = mutableListOf()
+        var fileNames: MutableList<String> = mutableListOf()
+
+        //获得目录下所有java文件路径
+        val path = """/Users/gaosong/git/vocation"""
+//    val path = """/Users/gaosong/git/edu-admin"""
+        val systemDir = File(path)
+
+        val fileTree = systemDir.walk()
+
+        fileTree
+            .filter { it.extension == "java" }
+            .filter { !it.name.contains("Enum") }
+            .forEach {
+                fileAbsoluteNames.add(it.absolutePath)
+                fileNames.add(it.name)
+            }
+    }
 }
 
 fun main() {
