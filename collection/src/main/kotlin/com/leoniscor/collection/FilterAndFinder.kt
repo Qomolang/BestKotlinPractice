@@ -14,4 +14,13 @@ class FilterAndFinder {
             .filter { it.deptId == 1L }
             .map { it.deptName }
     }
+
+    /**
+     * 按照key去重
+     * java中需要自己实现该功能
+     */
+    fun distinctByKey(input: List<DeptDO>){
+        input.distinctBy { it.deptId }
+    }
+
 }
